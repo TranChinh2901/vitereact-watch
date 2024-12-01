@@ -1,7 +1,6 @@
 {
   "name": "testapi",
   "home": "https://TranChinh2901.github.io/vitereact-watch/",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
