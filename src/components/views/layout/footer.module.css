@@ -1,5 +1,172 @@
-.footer{
+.footer {
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: 300px;
-    background-color: #83d583;
+    min-height: 300px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 3rem 5%;
+    gap: 2rem;
+}
+
+.footerLeft {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footerLeft h2 {
+    margin-bottom: 1.5rem;
+    color: #2ecc71;
+}
+
+.footerLeft p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.buttonFooter {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.buttonFooter button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.buttonFooter button:hover {
+    background-color: #27ae60;
+}
+
+.footerCenterA,
+.footerCenterB,
+.footerRight {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footerCenterA h3,
+.footerCenterB h3,
+.footerRight h3 {
+    color: #2ecc71;
+    margin-bottom: 1.5rem;
+}
+
+.footerCenterA p,
+.footerCenterB p,
+.footerRight p {
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footerCenterA p:hover,
+.footerCenterB p:hover,
+.footerRight p:hover {
+    color: #2ecc71;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .footer {
+        padding: 3rem 3%;
+    }
+    
+    .footerLeft {
+        flex: 1.5;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer {
+        padding: 2.5rem 2%;
+        gap: 1.5rem;
+    }
+
+    .footerLeft {
+        flex: 1;
+    }
+
+    .buttonFooter button {
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .footerLeft,
+    
+    .footerRight {
+        flex: 100%;
+        text-align: center;
+        min-width: 100%;
+    }
+    .footerCenterA,
+    .footerCenterB{
+        display: none;
+    }
+
+    .buttonFooter {
+        justify-content: center;
+    }
+
+    .footerCenterA p,
+    .footerCenterB p,
+    .footerRight p {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .footerLeft h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .footerLeft p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .footerCenterA h3,
+    .footerCenterB h3,
+    .footerRight h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .buttonFooter {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .buttonFooter button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
 }

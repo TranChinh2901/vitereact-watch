@@ -1,10 +1,18 @@
 import getData from "../../data";
 // import "./style.css";
 import styles from "./homePage.module.css"
-// import { useNavigate } from "react-router-dom";
+import SliderBottomHomePage from "./sliderBottomHome/sliderBottomHome";
+import SliderCenterHome from "./sliderCenterHomePage/sliderCenterHome";
+import SliderHomePage from "./sliderHomePage";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
-    // const navigate = useNavigate();
+    //chuyen huong den trang xemthem kem theo san pham
+    const navigate = useNavigate();
+
+    const handlerXemThem = (product) => {
+        navigate('/xemthem', { state: { product } });
+    }
 
     const handlerBuy = (product) => {
        
@@ -32,10 +40,15 @@ function HomePage() {
         
         localStorage.setItem('selectedProducts', JSON.stringify(updatedProducts));
         // navigate('/about', { state: { selectedProducts: updatedProducts } });
+        window.dispatchEvent(new Event('cartUpdated'));
     }
 
     return (  
+        <>
+         
         <div className={styles.container}>
+        <SliderHomePage/>  
+        <SliderCenterHome/>
             <h1 className={styles.title}>This is home page</h1>
             <div className="row"> 
                 {
@@ -47,7 +60,7 @@ function HomePage() {
                                         <p className={product.stock ? styles.discountLabel : styles.stockLabel}>
                                             {product.stock ? "Giảm giá 40%" : "Hết giảm giá"}
                                         </p>
-                                        <i className={`fas fa-eye ${styles.eyeIcon}`}></i>
+                                        <i className={`fas fa-eye ${styles.eyeIcon}`} onClick={() => handlerXemThem(product)}></i>
                                         <img className={styles.cardImg} src={product.anh} alt={product.ten} />
                                         <div className={styles.cardBody}>
                                             <h4 className={styles.nameCard}>{product.ten}</h4>
@@ -55,7 +68,7 @@ function HomePage() {
                                             <div className={styles.flexCard}>
                                                 <p className={styles.priceCard}>{product.gia} VND</p>
                                                 <button className={styles.btnCard} onClick={() => handlerBuy(product)}>
-                                                    Add cart
+                                                   <i className="fa-solid fa-plus" style={{fontSize:"25px"}}></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -66,7 +79,9 @@ function HomePage() {
                     })
                 }
             </div>
+            <SliderBottomHomePage/>
         </div>
+        </>
     );
 }
 

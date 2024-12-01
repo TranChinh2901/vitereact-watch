@@ -1,0 +1,59 @@
+.container{
+    text-align: center;
+    display: flex;
+    height: auto;
+    width: 100%;
+    
+    margin: 20px auto;
+    text-align: center;
+}
+.left{
+    width: 35%;
+    list-style: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* border-radius: 8px; */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 14.5px;
+    height: fit-content;
+}
+
+.right{
+    text-align: center;
+    width: 65%;
+    height: 330px;
+    color: black;
+    background-color: black;
+    /* border-radius: 8px; */
+    overflow: hidden;
+    background-color: transparent;
+}
+.option{
+    display: flex;
+    align-items: inherit;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    margin-left: 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.option:hover{
+    background-color: #f5f5f5;
+    transform: translateX(5px);
+}
+.textOption{
+    font-size: 14px;
+    flex: 1;
+    text-align: left;
+    margin: 0;
+}
+.slick-next:before {
+    color: black;
+}
+.slick-prev:before {
+    color: black;
+}

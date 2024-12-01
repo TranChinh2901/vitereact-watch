@@ -1,0 +1,292 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+.containerCart{
+  
+    position: relative;
+    top: 2cm;
+    width: 80%;
+    height: 100%;
+    padding: 0 20px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+
+}   
+
+.emptyCart{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+.emptyCartImg{
+    width: 40%;
+    height: 300px;
+}
+.btnHome{
+    background-color: #2a83e9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.wrapperCart{
+    padding-top: 40px;
+    /* margin-top: 20px; */
+    margin-bottom: 1cm;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.selectedProducts{
+    /* margin-top: 20px;
+    margin-bottom: 170px; */
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.productItem {
+    display: grid;
+    grid-template-columns: 120px 2fr 1fr 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.productItem:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.productItem img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.productName {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.productPrice {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2a83e9;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+/* .quantityControls button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #2a83e9;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+} */
+
+.quantityControls span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.deleteButton {
+    padding: 8px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment{
+    width: 350px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+   margin-bottom: 100px;
+}
+
+.payment .titlePayment {
+    color: #FF424E;
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.payment .totalPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+.payment .totalPrice::after {
+    content: attr(data-price);
+    color: #FF424E;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapperCart {
+        flex-direction: column;
+    }
+    
+    .payment {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .selectedProducts {
+        width: 100%;
+    }
+    
+    .productItem {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .productItem img {
+        margin: 0 auto;
+    }
+    
+    .quantityControls {
+        margin: 0 auto;
+    }
+}
+
+.phanThanhToan{
+    display: block;
+}
+.thanhToan{
+    display: block;
+}
+
+.btnDatHang {
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: none;
+    width: 100%;
+    height: 45px;
+    background-color: rgb(252, 118, 0);
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none
+  }
+  .btnDatHang:hover {
+    background-color: #FF8C00; /* Màu cam đậm khi hover */
+  }
+  .iconBank{
+   margin-left: 10px;
+  }
+
+  .momo{
+    margin-right: 5px;
+  }
+
+  .inputPayment{
+    line-height: 1.8;
+  }
+  .agree{
+    margin-top: 5px;
+  }
+
+  .containerHide{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 1000px;
+    z-index: 1000;
+  }
+
+  /* Thêm kiểu dáng cho thông báo */
+  .displayOrder {
+    width: 500px;
+    
+    background-color: rgba(255, 255, 255); /* Nền mờ */
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    border-radius: 10px;
+    
+  }
+  /* src/components/pages/cartPage/cartPage.module.css */
+.showOrder {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+}
+
+.iconHide{
+   justify-content: end;
+}
+
+.checkBoxAgree{
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}

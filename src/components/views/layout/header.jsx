@@ -1,10 +1,39 @@
 import { Link } from "react-router-dom";
 import styles from "./header.module.css";
+
+import { useEffect, useState } from "react";
+
 function Header() {
+    const [cartItemCount, setCartItemCount] = useState(0);
 
-  
+    useEffect(() => {
+        const updateCartCount = () => {
+            const products = JSON.parse(localStorage.getItem('selectedProducts') || '[]');
+            const totalItems = products.reduce((sum, product) => sum + (product.quantity || 1), 0);
+            setCartItemCount(totalItems);
+        };
 
-    return ( 
+        // Cập nhật số lượng ban đầu
+        updateCartCount();
+
+        // Lắng nghe sự kiện storage change
+        window.addEventListener('storage', updateCartCount);
+        
+        // Lắng nghe sự kiện cartUpdated
+        window.addEventListener('cartUpdated', updateCartCount);
+
+
+
+        // Lắng nghe sự kiện 
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('storage', updateCartCount);
+            window.removeEventListener('cartUpdated', updateCartCount);
+        };
+    }, []);
+
+    return (
         <div className={styles.header}>
             <div className={styles.logo}>
                 <Link to="/" className={styles.logoLink}>
@@ -40,7 +69,7 @@ function Header() {
             <div className={styles.headerCart}>
                 <Link to="/cart">
                     <i className="fa-solid fa-cart-shopping"></i>
-                    <span>0</span>
+                    <span>{cartItemCount}</span>
                 </Link>
             </div>
         </div>

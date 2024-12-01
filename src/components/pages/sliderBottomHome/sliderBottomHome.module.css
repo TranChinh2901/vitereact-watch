@@ -1,0 +1,76 @@
+/* Tổng Container */
+.wrapContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0; /* Thêm khoảng cách trên/dưới */
+}
+
+/* Slider Container */
+.container {
+    display: flex; /* Sử dụng Flexbox để chia cột */
+    justify-content: space-between; /* Giãn cách đều */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 90%; /* Giảm chiều rộng để tạo không gian */
+    margin: 0 auto; /* Căn giữa slider */
+    height: 300px; /* Chiều cao của từng slide */
+    border: 1px solid #ddd; /* Đường viền mờ */
+    padding: 10px; /* Khoảng cách giữa viền và nội dung */
+    box-sizing: border-box;
+    background-color: #fff; /* Nền trắng */
+    overflow: hidden; /* Ẩn phần thừa nếu có */
+}
+
+/* Phần trái (Ảnh) */
+.left {
+    width: 40%; /* Chiếm 40% chiều rộng */
+    height: 100%; /* Chiều cao full */
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+}
+
+.left img {
+    max-width: 100%; /* Ảnh không vượt quá chiều rộng khung */
+    max-height: 100%; /* Ảnh không vượt quá chiều cao khung */
+    object-fit: contain; /* Giữ tỷ lệ ảnh */
+    border-radius: 10px; /* Bo tròn ảnh nhẹ */
+}
+
+/* Phần phải (Nội dung) */
+.right {
+    width: 60%; /* Chiếm 60% chiều rộng */
+    height: 100%; /* Chiều cao full */
+    display: flex;
+    flex-direction: column; /* Xếp nội dung theo cột */
+    justify-content: center; /* Căn giữa nội dung dọc */
+    padding: 20px; /* Thêm khoảng cách nội dung */
+    box-sizing: border-box;
+    text-align: left;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* Nội dung tiêu đề */
+.ten {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.gia {
+    font-size: 1.2rem;
+    color: #ff5722; /* Màu nổi bật cho giá */
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Hiệu chỉnh React Slick (nếu cần) */
+.slick-slide {
+    display: flex !important; /* Đảm bảo slide luôn dùng flexbox */
+    justify-content: center;
+    align-items: center;
+}

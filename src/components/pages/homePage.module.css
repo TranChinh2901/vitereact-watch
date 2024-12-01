@@ -1,7 +1,9 @@
 .container{
+  margin: 0 auto;
+  /* text-align: center; */
     position: relative;
     top: 1cm;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: #ffffff;
     padding: 20px;
@@ -68,17 +70,17 @@
 }
 
 .btnCard {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 8px 16px;
+  background-color: white;
+  color: #e73f3f;
+  border: 0.5px solid grey;
+  padding: 4px 8px;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .btnCard:hover {
-  background-color: #45a049;
+  background-color: #8ac58d;
 }
 
 .stockLabel,
